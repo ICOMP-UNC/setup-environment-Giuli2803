@@ -1,9 +1,9 @@
-#Request the minimun version of CMake, in case of lower version throws error.
-#See:https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html
+# Request the minimun version of CMake, in case of lower version throws error.
+# See:https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html
 cmake_minimum_required(VERSION 3.25 FATAL_ERROR)
 
 # Define your project with VERSION, DESCRIPTION, and LANGUAGES
-#See:https://cmake.org/cmake/help/latest/command/project.html
+# See:https://cmake.org/cmake/help/latest/command/project.html
 project(
     "FirstProjectInCMake"
     VERSION 1.0.0
@@ -12,12 +12,12 @@ project(
 )
 
 # Define the C standard, we are going to use std17
-#See:https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html
+# See:https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html
 set(CMAKE_C_STANDARD 17)
 
 # Include the 'include' directory, where the headers are located
-#See:https://cmake.org/cmake/help/latest/command/include_directories.html
-#va a buscar todas las librerias que le falten en la carpeta include, independientemente de la sintaxis
+# See:https://cmake.org/cmake/help/latest/command/include_directories.html
+# Va a buscar todas las librerias que le falten en la carpeta include, independientemente de la sintaxis
 include_directories(include)
 
 # Add the 'src' directory, where the source files are located
@@ -25,9 +25,23 @@ include_directories(include)
 file(GLOB_RECURSE SOURCES "src/*.c")
 
 # Create the executable
-#See: https://cmake.org/cmake/help/latest/command/add_executable.html
+# See: https://cmake.org/cmake/help/latest/command/add_executable.html
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-#set(CMAKE_FLAGS) para definir flags de compilación
+# Compile the libraries
+# See: https://cmake.org/cmake/help/latest/command/add_subdirectory.html
+add_subdirectory(lib/libdyn)
+add_subdirectory(lib/libsta)
+
+# Include headers in lib 
+# See: https://cmake.org/cmake/help/latest/command/target_include_directories.html
+target_include_directories(${PROJECT_NAME} PUBLIC lib/libdyn/include)
+target_include_directories(${PROJECT_NAME} PUBLIC lib/libsta/include)
+
+# Link the libraries
+# See: https://cmake.org/cmake/help/latest/command/target_link_libraries.html
+target_link_libraries(${PROJECT_NAME} StatiCLib DynamiCLib)
+
+# set(CMAKE_FLAGS) para definir flags de compilación
 
 
