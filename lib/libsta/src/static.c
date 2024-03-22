@@ -7,3 +7,4 @@ int static_lib_function(char* msg)
     printf("Hi! I'm a static lib that receives '%s', and return '%zu'\n", msg, strlen(msg));
     return strlen(msg);
 }
+

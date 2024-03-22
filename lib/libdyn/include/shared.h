@@ -9,3 +9,4 @@
  * @return the message size
 */
 int shared_lib_function(char* msg);
+

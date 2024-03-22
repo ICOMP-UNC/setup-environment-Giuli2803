@@ -24,4 +24,3 @@ double divide(int first_number, int second_number)
     return -1.0;
 }
 
-

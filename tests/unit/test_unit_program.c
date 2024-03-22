@@ -44,3 +44,4 @@ int main(void)
     RUN_TEST(test_logic_divide);
     return UNITY_END();
 }
+

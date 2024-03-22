@@ -9,3 +9,4 @@
  * @return the message size
 */
 int static_lib_function(char* msg);
+

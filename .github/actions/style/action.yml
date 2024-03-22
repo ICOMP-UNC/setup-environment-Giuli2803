@@ -40,3 +40,4 @@ runs:
         name: Clang-format errors!!!
         path: $PROJECT_PATH/clang-format_errors.txt
         retention-days: 1
+

@@ -38,3 +38,4 @@ runs:
         name: Tests or coverage errors!!!
         path: $(pwd)/error_flag.txt
         retention-days: 1
+
