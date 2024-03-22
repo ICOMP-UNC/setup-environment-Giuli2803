@@ -34,3 +34,4 @@ int multiply(int first_number, int second_number);
  * @return first_number / second_number, if second_number != 0
  */
 double divide(int first_number, int second_number);
+

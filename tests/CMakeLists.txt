@@ -42,3 +42,4 @@ target_link_libraries(test_${PROJECT_NAME} unity)
 # Add test
 # See:https://cmake.org/cmake/help/latest/command/add_test.html
 add_test(NAME test_${PROJECT_NAME} COMMAND test_${PROJECT_NAME})
+
